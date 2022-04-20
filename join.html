@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Join Us</title>
+	<link rel="stylesheet" href="join.css">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!--*****************************Header*****************************-->
+
+<header>
+	<a href="#">
+		<img class="logo" src="pawfectlogo.png" alt="pawfectlogo">
+	</a>
+	<div class="menu-toggle"></div>
+	<div id="donate">
+    <a href="#" class="donate"><strong>Donate</strong></a>
+  </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="AboutUs1.html">About Us</a></li>
+            <li><a href="adoption.html">Adoption</a></li>
+            <li><a href="join.html" class="active1">Join Us</a></li>
+		</ul>
+	</nav>
+	<div class="clearfix"></div>
+</header>
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous">
+</script>
+
+<!--*****************************Images**********************************-->
+<main>
+<div class="carousel">
+	<div class="img-slider">
+      	<div class="slide active">
+        	<img src="stray.jpg" alt="">
+        	<div class="info">
+        		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+    	<div class="slide">
+        	<img src="abandonedpup.jpg" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+      	<div class="slide">
+        	<img src="stray-dog.JPG" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+      	<div class="slide">
+        	<img src="pug.jpg" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+     	</div>
+      	<div class="slide">
+        	<img src="2stray.jpg" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+      	<div class="slide">
+        	<img src="pup.jpg" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+      	<div class="slide">
+        	<img src="Straydog.jpg" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+      	<div class="slide">
+        	<img src="stray-d.jpg" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+      	<div class="slide">
+        	<img src="dog.jpg" alt="">
+        	<div class="info">
+          		<!--<h2>All Are Pawfect</h2>-->
+        	</div>
+      	</div>
+      	<div class="navigation">
+        	<div class="btn active"></div>
+        	<div class="btn"></div>
+        	<div class="btn"></div>
+        	<div class="btn"></div>
+        	<div class="btn"></div>
+        	<div class="btn"></div>
+        	<div class="btn"></div>
+        	<div class="btn"></div>
+        	<div class="btn"></div>
+      	</div>
+    </div>
+    <div id="para">
+      <p class="para">ALL</p>
+      <p class="para">ARE</p>
+      <p class="para">PAWFECT</p>
+    </div>
+</div>
+<!--Carousal ends-->
+<br>
+<!--Join us content starts-->
+
+<div class="container ">
+  <h1 class="ty">Thank You for having the thought of joining us.</h1>
+    <p class="para1">
+        When it comes to joining us, you should know that we love dogs and can go to any 
+        extent to keep them safe. By joining us, you give us the impression that you are as 
+        passionate as us about stray dogs. If that is the case, then we would be delighted 
+        if you join us. There is a form you have to fill by clicking the button below, providing us with your contact details.
+        We will give you a call and set an appointment with the person in charge.        
+    </p>
+  
+
+        <!--triggering of modal-->
+        <button id="Modalform">YES I WANT TO BE A PART</button> 
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+
+        <!--FORM TO FILL STARTS-->
+            <form class="joinform" onsubmit="myFunction()" action = "join.php" method="POST">
+
+              <section>
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" required>
+              </section>
+
+              <section>
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="lname" required>
+              </section>
+
+              <section>
+                <label for="age">Age: </label>
+                <input type="text" id="age" name="age" required>
+              </section>
+
+              <section>
+                <label for="email">Email id: </label>
+                <input type="text" id="email" name="email" required>
+              </section>
+
+              <section>
+                <label for="phone">Mobile Number: </label>
+                <input type="text" id="mobnum" name="mobnum" required>
+              </section>
+
+              <section>
+                <label for="address">Current Address: </label>
+                <input type="text" id="address" name="address" required>
+              </section>
+
+              <input type="submit" id="submit" value="submit">
+            </form>
+    <!--FORM TO FILL ENDS-->
+          </div><!-- Modal content -->
+        </div><!-- The Modal -->
+</div><!--Contain-->
+
+<!--join us content ends-->
+
+<!-- <script type="text/javascript" src="myScript.js"></script> -->
+
+</main>
+<script type="text/javascript" src="join.js"></script>
+
+<footer>
+  <div class="pawfect">
+    <img class="pawfectlogo" src="pawfectlogo.png" alt="pawfectlogo">
+  </div>
+  
+  <div class="footer-container">
+    <div class="top">
+      <h1>Donate</h1>
+      <a href="#" class="donatenow">Donate Now</a>
+    </div>
+
+    <div class="middle">
+      <h1>Contact</h1>
+      <div class="nos">
+        <a href="tel:+91 8756923641">+91 8756923641</a><br>
+        <a href="tel:+91 7523694105">+91 7523694105</a>
+        <p>Emergency: <a href="tel:+91 900247036">+91 900247036</a></p>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="social-media">
+        <a href="#"><i class="fa fa-facebook-square"></i></a>
+        <a href="#"><i class="fa fa-envelope"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
+      <p class="rights">&copy 2020 Created By All Are Pawfect<br> All Rights Reserved</p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

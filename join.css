@@ -1,0 +1,771 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background: #fff;
+}
+
+/*---------------------------------------------Header-----------------------------------------------*/
+
+header{
+  position: sticky;
+  top: 0;
+  max-width: 100%;
+  padding: 10px;
+  background: #fff;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  z-index: 100;
+}
+.logo{
+  width: 9em;
+  height: 7em;
+  padding: 0 20px;
+  float: left;
+}
+nav{
+  float: right;
+}
+.clearfix{
+  clear: both;
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li{
+  list-style: none;
+}
+nav ul li a{
+  font-size: 0.8em;
+  display: block;
+  margin: 10px 1px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #708090;
+  text-align: center;
+  border-radius: 10px;
+}
+nav ul li a.active1,nav ul li a:hover{
+  background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+  /*background-image: linear-gradient(135deg, #00b7ff, #ffffc7);*/
+  color: #000;
+  transition: 0.5s;
+  transition-timing-function: ease;
+  border: 0.5px solid #000;
+}
+#donate{
+  float: right;
+  display: inline-flex;
+  font-size: 1.5em;
+  background: #000;
+  text-decoration: none;
+  margin: 5px 5px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+.donate{
+  /* Fallback: Set a background color. */
+  background-color: #fff;
+  
+  /* Create the gradient. */
+  background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+  
+  /* Set the background size and repeat properties. */
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+
+/*--------------------------------Responsive Header-------------------------------------*/
+
+@media screen and (min-width: 1020px){
+  .logo{
+    margin-left: 2em;
+  } 
+  #donate{
+    margin-right: 3em;
+  }
+  nav ul li a{
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 1020px){
+  .logo{
+    margin-left: 2em;
+  } 
+  #donate{
+    padding: 10px 10px;
+    margin-right: 3em;
+  }
+  nav ul li a{
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 900px){
+  .logo{
+    margin-left: 2em;
+  } 
+  .menu-toggle{
+    display: block;
+    width: 40px;
+    height: 43px;
+    margin: 10px;
+    margin-top: 11px;
+    float: right;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+    color: #000;
+    border-radius: 10px;
+    border: 1px solid #000;
+  } 
+  .menu-toggle:before{
+    content: "\f0c9";
+    font-family: fontAwesome;
+    line-height: 40px;
+  }
+  .menu-toggle.active1:before{
+    content: "\f00d";
+  }
+  nav{
+    display: none;
+  }
+  nav.active1{
+    display: block;
+    width: 100%;
+  }
+  nav.active1 ul{
+    display: block;
+  }
+  nav.active1 ul li a{
+    margin: 0;
+    padding: 5px 5px;
+  }
+  #donate{
+    padding: 10px 15px;
+    margin: 5px 5px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .menu-toggle{
+    display: block;
+    width: 30px;
+    height: 31px;
+    margin: 5px;
+    margin-top: 12px;
+    font-size: 22px;
+    background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+    color: #000;
+    border-radius: 10px;
+    border: 0.5px solid #000;
+  } 
+  .menu-toggle:before{
+    content: "\f0c9";
+    font-family: fontAwesome;
+    line-height: 20px;
+  }
+  .logo{
+    width: 7em;
+    height: 6em;
+    margin-left: 0px;
+    padding: 0px;
+  }
+  nav.active1 ul li a{
+    margin: 0;
+    padding: 3px 3px;
+  }
+  #donate{
+    font-size: 1.1em;
+    padding: 10px 12px;
+  }
+}
+
+/*--------------------------------------Images-------------------------------------*/
+
+.carousel{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+    box-sizing: border-box;
+    background: #000;
+}
+
+.img-slider{
+    position: relative;
+    float: left;
+    width: 100%;
+    background: #000;
+}
+
+.img-slider .slide{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    transition-property: clip-path;
+}
+
+.img-slider .slide img{
+    z-index: 1;
+    width: 100%;
+    height: 500px;
+    align-items: center;
+}
+
+/*.img-slider .slide .info{
+    position: absolute;
+    top: 0;
+    padding: 15px 30px;
+}*/
+.img-slider .navigation{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-slider .navigation .btn{
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-slider .navigation .btn.active{
+    background: #2696E9;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+#para{
+  display: block;
+  color: #fff;
+  float: right;
+  font-size: 3em;
+  letter-spacing: 0.5em;
+  margin-right: 1em;
+  padding: 1em;
+}
+.para{
+  /* Fallback: Set a background color. */
+  background-color: #fff;
+  
+  /* Create the gradient. */
+  background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+  
+  /* Set the background size and repeat properties. */
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+/*---------------------------------Responsive Images-----------------------------------*/
+@media screen and (max-width: 1340px){
+  #para{
+    font-size: 2.5em;
+    letter-spacing: 0.3em;
+    margin-right: 0.8em;
+    margin-top: 1em;
+    padding: 0.5em;
+  }
+}
+@media screen and (min-width: 1135px){
+    
+    .img-slider{
+      width: 100%;
+      height: 600px;
+    }
+    .img-slider .slide img{
+      width: 100%;
+      height: 500px;
+  }
+    .img-slider .navigation{
+      bottom: 25px;
+    }
+    .img-slider .navigation .btn{
+      width: 10px;
+      height: 10px;
+      margin: 8px;
+    }
+}
+@media screen and (min-width: 900px){
+  
+    .img-slider{
+      width: 60%;
+      height: 500px;
+    }
+    .img-slider .slide img{
+      width: 100%;
+      height: 500px;
+  }
+    .img-slider .navigation{
+      bottom: 25px;
+    }
+
+    .img-slider .navigation .btn{
+      width: 10px;
+      height: 10px;
+      margin: 8px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    #para{
+      display: none;
+    }
+    .img-slider{
+      width: 100%;
+      height: 500px;
+    }
+    .img-slider .slide img{
+      width: 100%;
+      height: 500px;
+  }
+
+    .img-slider .navigation{
+      bottom: 25px;
+    }
+
+    .img-slider .navigation .btn{
+      width: 10px;
+      height: 10px;
+      margin: 8px;
+    }
+}
+
+@media screen and (max-width: 780px){
+    .img-slider{
+        width: 100%;
+        height: 400px;
+    }
+    .img-slider .slide img{
+      height: 400px;
+    }
+    .img-slider .slide .info{
+      padding: 10px 20px;
+    }
+    .img-slider .navigation{
+      bottom: 15px;
+    }
+  .img-slider .navigation .btn{
+      width: 8px;
+      height: 8px;
+      margin: 6px;
+    }
+}
+@media screen and (max-width: 480px){
+  .img-slider{
+      width: 100%;
+      height: 250px;
+    }
+    .img-slider .slide img{
+      height: 250px;
+    }
+    .img-slider .slide .info{
+      padding: 10px 20px;
+    }
+    .img-slider .navigation{
+      bottom: 15px;
+  }
+
+    .img-slider .navigation .btn{
+      width: 5px;
+      height: 5px;
+      margin: 4px;
+    }
+}
+
+/*----------------------------------------------------Form and content------------------------------------------*/
+
+
+.ty{
+  color: #000;
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.para1{
+  font-size: 1.2em;
+  padding: 20px 20px;
+  margin: 10px 40px;
+  text-align: center;
+  line-height: 1.8em;
+}
+
+button{
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+#Modalform{
+  text-align: center;
+  padding: 10px 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+  border-width: 7px;
+  border-radius: 10px;
+  color: black;
+}
+
+/*Modal form starts*/
+form{
+  text-align: left;
+  margin-top: 4em;
+  color: #fff;
+}
+section{
+  font-size: 1.2em;
+  margin-left: 5%;
+}
+#submit{
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-bottom: 1.5em;
+}
+label {
+    display: block;
+    margin-left: 5%;
+    font-size: 1.2em;
+    font-weight: bold;
+    /*margin-bottom: .7em;*/
+}
+input[type=text], textarea {
+    margin-bottom: 1.5em;
+    display: block;
+    padding: .5em;
+    padding-bottom: 0;
+    margin-left: 5%;
+    width: 80%;
+    border: none;
+    outline: 0;
+    background: #2B3337;
+    border-bottom: 2px solid #9D9D9D;
+    color: white;
+}
+
+  /* The Modal (background) */
+  .modal {
+    background: rgba(0,0,0,0.8);
+    display: flex; 
+    position: fixed; 
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100vw; 
+    height: 100vh; 
+    overflow-y: scroll;  
+  }
+/* Modal Content */
+.modal-content {
+    background: #000;
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #888;
+    width: 60%;
+  }
+  
+   /* The Close Button */
+   .close {
+    color: #fff;
+    display: block;
+    text-align: center;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  
+  .close:hover{
+    cursor: pointer;
+  }
+      /*css for modal form ends*/
+
+/*Modal form ends*/
+
+input[type=text]:focus, textarea:focus {
+    border-bottom: 4px solid #ff8c8c;
+}
+
+input[type=submit] {
+    background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+    border: none;
+    color: #000;
+    font-weight: bold;
+    padding: .6em 1em;
+    border-radius: 10px;
+    font-size: .8em;
+}
+
+
+
+/*------------------------------------------------------Responsive Form-----------------------------------------*/
+
+@media (max-width: 900px){
+ 
+  label{
+    font-size: 1em;
+  }  
+  .modal-content{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 780px){
+  input[type=text], textarea{
+    width: 80%;
+  }
+ 
+  label{
+    font-size: 1em;
+  }  
+  .modal-content{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 480px){
+  label{
+    font-size: 0.8em;
+  }  
+  .modal-content{
+    width: 90%;
+  }
+}
+
+
+
+
+
+/*---------------------------------------------Footer--------------------------------------*/
+
+footer{
+  background: #111;
+  position: relative;
+}
+.footer-container{
+  max-width: 100%;
+  margin: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pawfectlogo{
+  width: 7em;
+  height: 6em;
+}
+.social-media{
+  margin: 10px;
+}
+.social-media a{
+  text-decoration: none;
+  margin-right: 10px;
+}
+.social-media a .fa{
+  font-size: 2em;
+  color: #222;
+  margin-top: 5px;
+}
+.social-media a::before{
+  font-family: fontAwesome;
+  position: absolute;
+  
+  font-size: 2em;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+.social-media a:nth-child(1)::before{
+  content: "\f082";
+  color: #0000ff;
+  border-bottom: 5px solid #0000ff;
+}
+.social-media a:nth-child(2)::before{
+  content: "\f0e0";
+  color: #EA4335;
+  border-bottom: 5px solid #EA4335;
+}
+.social-media a:nth-child(3)::before{
+  content: "\f16d";
+  background-image: linear-gradient(#8a2be2,#9400d3,#c71585,#ff1493,#ff4500,#ffd700);
+  color: #fff;
+  border-bottom: 5px solid #8a2be2;
+}
+.social-media a:hover::before{
+  height: 1em;
+}
+
+h1{
+  font-size: 1.2em;
+  color: #fff;
+  opacity: 0.8;
+}
+.nos{
+  font-size: 0.9em;
+  margin-top: 12px;
+  color: #708090;
+}
+.nos a{
+  color: #708090;
+  text-decoration: none;
+}
+.donatenow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1em;
+  background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+  color: #000;
+  text-decoration: none;
+  margin: 5px 5px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+}
+.rights{
+    font-size: 0.8em;
+}
+.rights{
+  background-color: #fff;
+  background-image: linear-gradient(135deg, #f1eab9, #ff8c8c);
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+
+/*-------------------------------------------Responsive Footer------------------------------------*/
+
+@media screen and (min-width: 901px){
+  .pawfectlogo{
+    width: 7em;
+    height: 6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .donatenow{
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 1em;
+  }
+  .top{
+    width: 15em;
+    display: block;
+    text-align: center;
+    margin: 0px 10px 20px 10px;
+  }
+  .middle{
+    display: block;
+    margin: 0px 10px 20px 0px;
+    text-align: center;
+  }
+  .bottom{
+    display: block;
+    margin: 10px 30px 20px 0px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 900px){
+  .pawfectlogo{
+    width: 7em;
+    height: 6em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .social-media a{
+    margin-right: 5px;
+  }
+  .top{
+    width: 12em;
+    display: block;
+    margin: 0px 20px 0px 20px;
+    padding: 0 30px;
+    text-align: center;
+  }
+  .donatenow{
+    font-size: 1.2em;
+    padding: 1em;
+    border-radius: 10px;
+  }
+  .middle{
+    display: block;
+    margin: 0px 20px 0px 20px;
+    padding: 0 30px;
+    text-align: center;
+  }
+  .bottom{
+    display: block;
+    width: 100%;
+    margin: 20px 20px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 680px){
+  .top{
+    width: 15em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 2px auto;
+    text-align: center;
+  }
+  .middle{
+    width: 100%;
+    margin: 10px 20px 0 20px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px){
+
+  .donatenow{
+    font-size: 1em;
+    border-radius: 10px;
+    margin: 5px 20px;
+    padding: 10px 10px;
+  }
+  
+  .bottom{
+    width: 100%;
+    margin: 10px 20px;
+    text-align: center;
+  }
+}
